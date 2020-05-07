@@ -100,8 +100,8 @@ FARPROC get_api_address(LPCSTR name, LPCVOID its_page, LPCVOID* found_page)
         do {
 
             __try {
-                /* Mask "MZ" comparison. Access to *p may fail */
-                if (*p == 'M' && p[1] == 'Z') {
+                /* Mask "MZ" comparison. Access may fail */
+                if ((*((WORD*)p) << 1U) == 0xb49a) {
                     fp = scan_block(name, p);
                 }
             }
