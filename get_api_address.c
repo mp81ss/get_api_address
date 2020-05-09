@@ -49,7 +49,7 @@ static FARPROC scan_block(LPCSTR name, LPCVOID pv)
 
         /* Check for PE header, masking it */
         p_names = (CONST DWORD*)pe;
-        if (((*p_names) << 1U) != 0x00008aa0U) break;
+        if ((*p_names << 1U) != 0x00008aa0U) break;
 
         /* Check for magic header 32/64 */
         if (GET_WORD(pe + 0x18U) != HEADER_MAGIC) break;
