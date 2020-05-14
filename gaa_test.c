@@ -3,13 +3,13 @@
 
 int main(void)
 {
-    typedef VOID (*exit_t)(UINT);
+    typedef VOID (WINAPI *exit_t)(UINT);
     exit_t ep;
     LPCVOID page;
 
     ep = (exit_t)get_api_address("ExitProcess", NULL, &page);
     if (ep != NULL) {
-        typedef DWORD (*gtc_t)(VOID);
+        typedef DWORD (WINAPI *gtc_t)(VOID);
         gtc_t gtc;
 
         puts("ExitProcess found, searching GetTickCount by one shot");

@@ -102,7 +102,7 @@ FARPROC get_api_address(LPCSTR name, LPCVOID its_page, LPCVOID* found_page)
 
             __try {
                 /* Mask "MZ" comparison. Access may fail */
-                if ((*((WORD*)p) << 1U) == 0xb49a) {
+                if ((*((WORD*)p) << 1U) == (WORD)0xb49aU) {
                     fp = scan_block(name, p);
                 }
             }
