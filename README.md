@@ -1,3 +1,6 @@
+# ARCHIVED - Moved to gitlab
+
+
 This mini-library allows to retrieve API address in loaded modules **without**
 calling standard API *GetProcAddress*.
 
